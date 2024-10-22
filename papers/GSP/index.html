@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Grasp, See and Place: Efficient Unknown Object Rearrangement with Policy Structure Prior.">
+  <meta name="keywords" content="Grasp, Place, Unknown, Object Rearrangement">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grasp, See and Place: Efficient Unknown Object Rearrangement with Policy Structure Prior</title>
+
+  <meta property="og:image" content="resources/og_image"/>
+	<meta property="og:title" content="Grasp, See and Place: Efficient Unknown Object Rearrangement with Policy Structure Prior" />
+	<meta property="og:description" content="Grasp, See and Place: Efficient Unknown Object Rearrangement with Policy Structure Prior." />
+  <!-- Twitter automatically scrapes this. Go to https://cards-dev.twitter.com/validator?
+      if you update and want to force Twitter to re-scrape. -->
+  <meta property="twitter:card"          content="summary" />
+  <meta property="twitter:title"         content="Grasp, See and Place: Efficient Unknown Object Rearrangement with Policy Structure Prior" />
+  <meta property="twitter:description"   content="Grasp, See and Place: Efficient Unknown Object Rearrangement with Policy Structure Prior." />
+  <meta property="twitter:image"         content="resources/og_image" />
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFNFH9CKNX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-VFNFH9CKNX');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- <script src="./static/js/index.js"></script> -->
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      
+      <br>
+
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title" style="font-size: 2.2rem;">Grasp, See and Place: Efficient Unknown Object Rearrangement with Policy Structure Prior</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://xukechun.github.io/">Kechun Xu</a><sup>1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Zhongxiang Zhou</a><sup>1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Jun Wu</a><sup>1</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Haojian Lu</a><sup>1</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Rong Xiong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://xukechun.github.io/">Yue Wang</a><sup>&#8224</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Zhejiang University</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">TRO 2024</span>
+          </div>
+
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2402.15402"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+          </span>
+
+          <!-- Code Link. -->
+          <span class="link-block">
+            <a href="https://github.com/xukechun/GSP"
+               class="external-link button is-normal is-rounded is-dark disabled">
+              <span class="icon">
+                  <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+              </a>
+          </span>
+          
+          <!-- YouTube Link. -->
+          <span class="link-block">
+            <a href=""
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-youtube"></i>
+              </span>
+              <span>Video</span>
+            </a>
+          </span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <td style="vertical-align:middle">
+        <img src='resources/teaser.png'>
+      </td>
+      <h2 class="subtitle">
+        <b>G</b>rasp, <b>S</b>ee, and <b>P</b>lace. The robot is given the initial and goal scenes for the task of object rearrangement. Aiming at improving task-level performance with perception noise, we first derive the decoupled structure by analysis. Guided by the decoupled prior, we incorporate human behavior and task-level rewards into the general framework of GSP. In general, <b>GSP</b> contains two loops: the inner loop actively sees the grasped object for high self-confident matching, and the outer loop conducts the grasp and place planning.
+      </h2>
+    </div>
+
+    <br>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We focus on the task of unknown object rearrangement, where a robot is supposed to re-configure the objects into a desired goal configuration specified by an RGB-D image. Recent works explore unknown object rearrangement systems by incorporating learning-based perception modules. However, they are sensitive to perception error, and pay less attention to task-level performance. In this paper, we aim to develop an effective system for unknown object rearrangement amidst perception noise. We theoretically reveal that the noisy perception impacts grasp and place in a decoupled way, and show such a decoupled structure is valuable to improve task optimality. We propose GSP, a dual-loop system with the decoupled structure as prior. For the inner loop, we learn a see policy for self-confident in-hand object matching. For the outer loop, we learn a grasp policy aware of object matching and grasp capability guided by task-level rewards. We leverage the foundation model CLIP for object matching, policy learning and self-termination. A series of experiments indicate that GSP can conduct unknown object rearrangement with higher completion rates and fewer steps.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Video</h2>
+        <video id="horse-real" autoplay controls muted preload loop playsinline>
+          <source src="resources/video.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <br>
+    <!--/ Paper video. -->
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview</h2>
+        <td style="padding:20px;width:35%;vertical-align:middle">
+          <img src='resources/overview.png' width="1000">
+        </td>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <p>
+            <b>System Overview</b>. Given the RGB-D images of the current and goal scenes, the grasp policy jointly considers object matching and candidate grasps to determine a selected grasp pose. After picking up an object, object matching is conducted between the grasped object and the goal objects. If the matching is self-confident, the object is rearranged to the planned place pose based on occupancy checking. Otherwise, active perception is triggered to predict the delta orientation of the end effector. Then the robot rotates the in-hand object to a new view until a confident matching is achieved. Overall, our method decomposes the object rearrangement process into two loops: an inner loop for see and an outer loop for grasp and place planning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{xu2024grasp,
+      title={Grasp, See and Place: Efficient Unknown Object Rearrangement with Policy Structure Prior},
+      author={Xu, Kechun and Zhou, Zhongxiang and Wu, Jun and Lu, Haojian and Wang, Yue and Xiong, Rong},
+      journal={arXiv preprint arXiv:2402.15402},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
+
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>
+      We are very grateful to Zizhang Li for insightful discussions and proofreading. This work was supported by the National Key R&D Program of China (2023YFB4705001) and the National Nature Science Foundation of China under Grant 62173293.
+    </p>
+    <!-- <p>
+      Keqiang Sun is supported by CUHK.
+    </p> -->
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This webpage template is adapted from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+            <a href="https://3dmagicpony.github.io/">MagicPony</a> and <a href="https://cs.stanford.edu/~yzzhang/projects/rose/">Rose</a>, under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  initComparisons();
+  window.addEventListener('resize', resetComparisons);
+  linkVideos(0);
+  linkVideos(1);
+</script>
+<script type="text/javascript" src="./static/js/slick.min.js"></script>
+<script src="./static/js/main.js"></script>
+
+</body>
+</html>
