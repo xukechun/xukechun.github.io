@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Language-conditioned Pick and Place.">
+  <meta name="keywords" content="Language-conditioned Pick and Place, Alignment, Foundation Priors">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Efficient Alignment of Unconditioned Action Prior for Language-conditioned Pick and Place in Clutter</title>
+
+  <meta property="og:image" content="resources/og_image"/>
+	<meta property="og:title" content="Efficient Alignment of Unconditioned Action Prior for Language-conditioned Pick and Place in Clutter" />
+	<meta property="og:description" content="Efficient Alignment of Unconditioned Action Prior for Language-conditioned Pick and Place in Clutter." />
+  <!-- Twitter automatically scrapes this. Go to https://cards-dev.twitter.com/validator?
+      if you update and want to force Twitter to re-scrape. -->
+  <meta property="twitter:card"          content="summary" />
+  <meta property="twitter:title"         content="Efficient Alignment of Unconditioned Action Prior for Language-conditioned Pick and Place in Clutter" />
+  <meta property="twitter:description"   content="Efficient Alignment of Unconditioned Action Prior for Language-conditioned Pick and Place in Clutter." />
+  <meta property="twitter:image"         content="resources/og_image" />
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFNFH9CKNX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-VFNFH9CKNX');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- <script src="./static/js/index.js"></script> -->
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      
+      <br>
+
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title" style="font-size: 2.2rem;">Efficient Alignment of Unconditioned Action Prior for Language-conditioned Pick and Place in Clutter</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a >Kechun Xu </a><sup>1,2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Xunlong Xia</a><sup>2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Kaixuan Wang</a><sup>1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Yifei Yang</a><sup>1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Yunxuan Mao</a><sup>1</sup>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Bin Deng</a><sup>2</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=1hI9bqUAAAAJ&hl=en">Rong Xiong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://ywang-zju.github.io/">Yue Wang</a><sup>&#8224</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Zhejiang University&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block"><sup>2</sup>Alibaba Cloud</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Under Review</span>
+          </div>
+
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a href=""
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+          </span>
+
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a href="https://A2_Proj.github.io/Appendix.pdf"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Appendix</span>
+            </a>
+          </span>
+          
+          <!-- Code Link. -->
+          <!-- <span class="link-block">
+            <a href="https://github.com/xukechun/GSP"
+               class="external-link button is-normal is-rounded is-dark disabled">
+              <span class="icon">
+                  <i class="fab fa-github"></i>
+              </span>
+              <span>Code Coming Soon</span>
+              </a>
+          </span> -->
+          
+          <!-- YouTube Link. -->
+          <!-- <span class="link-block">
+            <a href=""
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-youtube"></i>
+              </span>
+              <span>Video</span>
+            </a>
+          </span> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <td style="vertical-align:middle">
+        <img src='resources/teaser.png'>
+      </td>
+      <h2 class="subtitle">
+        Illustration of comparison on (a) classic end-to-end policies, (b) modular systems, and (c) our action prior alignment method that integrates foundation priors of vision, language, and action for planning..
+      </h2>
+    </div>
+
+    <br>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We study the task of language-conditioned pick and place in clutter, where a robot should grasp a target object in open clutter and move it to a specified place. Some approaches learn end-to-end policies with features from vision foundation models, requiring large datasets. Others combine foundation models in a zero-shot setting, suffering from cascading errors. In addition, they primarily leverage vision and language foundation models, focusing less on action priors. In this paper, we aim to develop an effective policy by integrating foundation priors from vision, language, and action. We propose A$^2$, an action prior alignment method that aligns unconditioned action priors with 3D vision-language priors by learning one attention layer. The alignment formulation enables our policy to train with less data and preserve zero-shot generalization capabilities. We show that a shared policy for both pick and place actions enhances the performance for each task, and introduce a policy adaptation scheme to accommodate the multi-modal nature of actions. Extensive experiments in simulation and the real-world show that our policy achieves higher task success rates with fewer steps for both pick and place tasks in clutter, effectively generalizing to unseen objects and language instructions.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview</h2>
+        <td style="padding:20px;width:35%;vertical-align:middle">
+          <img src='resources/overview.png' width="1000">
+        </td>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <p>
+            <b>Overview</b>. Given the language instruction and RGB-D image(s), the vision-language model MaskCLIP extracts dense patch-level features, which are projected into 3D representations, including a feature cloud, a similarity cloud, and a point cloud. In addition, the action foundation model generates action candidates. Based on these foundation priors, our policy conducts alignment for action planning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Video</h2>
+        <video id="real-world" autoplay controls muted preload loop playsinline>
+          <source src="resources/Real_Demos.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <br>
+    <!--/ Paper video. -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+
+    </code></pre>
+  </div>
+</section>
+
+
+<!-- <section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>
+      We are very grateful to Zizhang Li for insightful discussions and proofreading. This work was supported by the National Key R&D Program of China (2023YFB4705001) and the National Nature Science Foundation of China under Grant 62173293.
+    </p>
+  </div>
+</section> -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This webpage template is adapted from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  initComparisons();
+  window.addEventListener('resize', resetComparisons);
+  linkVideos(0);
+  linkVideos(1);
+</script>
+<script type="text/javascript" src="./static/js/slick.min.js"></script>
+<script src="./static/js/main.js"></script>
+
+</body>
+</html>
