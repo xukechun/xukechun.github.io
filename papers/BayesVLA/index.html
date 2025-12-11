@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Seeing to Act, Prompting to Specify: A Bayesian Factorization of Vision Language Action Policy.">
+  <meta name="keywords" content="Grasp and Place, Unknown Object Rearrangement">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seeing to Act, Prompting to Specify: A Bayesian Factorization of Vision Language Action Policy</title>
+
+  <meta property="og:image" content="resources/og_image"/>
+	<meta property="og:title" content="Seeing to Act, Prompting to Specify: A Bayesian Factorization of Vision Language Action Policy" />
+	<meta property="og:description" content="Seeing to Act, Prompting to Specify: A Bayesian Factorization of Vision Language Action Policy." />
+  <!-- Twitter automatically scrapes this. Go to https://cards-dev.twitter.com/validator?
+      if you update and want to force Twitter to re-scrape. -->
+  <meta property="twitter:card"          content="summary" />
+  <meta property="twitter:title"         content="Seeing to Act, Prompting to Specify: A Bayesian Factorization of Vision Language Action Policy" />
+  <meta property="twitter:description"   content="Seeing to Act, Prompting to Specify: A Bayesian Factorization of Vision Language Action Policy." />
+  <meta property="twitter:image"         content="resources/og_image" />
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFNFH9CKNX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-VFNFH9CKNX');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+
+  <!-- <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+    }
+  </style> -->
+          
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- <script src="./static/js/index.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      
+      <br>
+
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title" style="font-size: 2.2rem;">Seeing to Act, Prompting to Specify: <br> A Bayesian Factorization of Vision Language Action Policy</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://xukechun.github.io/">Kechun Xu</a><sup>§,¶</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Zhenjie Zhu</a><sup>¶</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Anzhe Chen</a><sup>¶</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=IJ2t8pIAAAAJ&hl=en&oi=ao">Shuqi Zhao</a><sup>§</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Qing Huang</a><sup>¶</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=Pu9UyugAAAAJ&hl=en&oi=ao">Yifei Yang</a><sup>¶</sup>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=dNAbVgIAAAAJ&hl=en">Haojian Lu</a><sup>¶</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=1hI9bqUAAAAJ&hl=en">Rong Xiong</a><sup>¶</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://msc.berkeley.edu/people/tomizuka.html">Masayoshi Tomizuka</a><sup>§,&#8224</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://ywang-zju.github.io/">Yue Wang</a><sup>¶,&#8224</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>§</sup>UC Berkeley</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>¶</sup>Zhejiang University</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>&#8224</sup>Corresponding Author</span>
+          </div>
+
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a href=""
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+          </span>
+          
+          <!-- Code Link. -->
+          <span class="link-block">
+            <a href=""
+               class="external-link button is-normal is-rounded is-dark disabled">
+              <span class="icon">
+                  <i class="fab fa-github"></i>
+              </span>
+              <span>Code (Coming Soon)</span>
+              </a>
+          </span>
+          
+          <!-- YouTube Link. -->
+          <!-- <span class="link-block">
+            <a href=""
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-youtube"></i>
+              </span>
+              <span>Video</span>
+            </a>
+          </span> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"></h2>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <video id="video1" autoplay controls muted preload loop playsinline>
+          <source src="resources/video.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+    <div class="hero-body">
+      <h2 class="subtitle" style="font-size: 1.1rem;">
+        <b>TL; DR</b>: BayesVLA decomposes the policy into a vision-action prior and a language-conditioned likelihood. The vision-action prior leverages visual information for action generation (<b>seeing to act</b>), while the language-conditioned likelihood aligns these action priors with the language instruction (<b>prompting to specify</b>).
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The pursuit of out-of-distribution generalization in Vision-Language-Action (VLA) models is often hindered by catastrophic forgetting of the Vision-Language Model (VLM) backbone during fine-tuning. While co-training with external reasoning data helps, it requires experienced tuning and data-related overhead. Beyond such external dependencies, we identify an intrinsic cause within VLA datasets: <b>modality imbalance</b>, where language diversity is much lower than visual and action diversity. This imbalance biases the model toward visual shortcuts and language forgetting. To address this, we introduce <b>BayesVLA</b>, a Bayesian factorization that decomposes the policy into a visual-action prior, supporting <b>seeing-to-act</b>, and a language-conditioned likelihood, enabling <b>prompt-to-specify</b>. This inherently preserves generalization and promotes instruction following. We further incorporate pre- and post-contact phases to better leverage pre-trained foundation models. Information-theoretic analysis formally validates our effectiveness in mitigating shortcut learning. Extensive experiments show superior generalization to unseen instructions, objects, and environments compared to existing methods. 
+          </p>
+        </div>
+        <div class="column is-full-width">
+          <td style="vertical-align:middle">
+            <img src='resources/teaser.png' width="700">
+          </td>
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            Given VLA datasets with modality imbalance, BayesVLA models the VLA policy using a prior and a likelihood. For stage 1, we train a prior model \( \pi^{p}(\mathbf{a}\mid\mathbf{v}) \) that takes in visual input to generate multimodal action distribution. Based on the prior, for stage 2, we train the likelihood model to further align the action priors with the language instruction.
+          </p>
+        </div>
+        <div style="font-size: 18px; text-align: center; margin: 18px 0;">
+          $$ \pi(\mathbf{a}\mid\mathbf{v},\ell) \;\propto\; \pi^{p}(\mathbf{a}\mid\mathbf{v})\; L(\ell\mid\mathbf{v},\mathbf{a}) $$
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <td style="padding:20px;width:35%;vertical-align:middle">
+        <img src='resources/overview.png' width="1000">
+      </td>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-fullwidth">
+        <h2 class="title is-3">Simulation Results</h2>
+      </div>
+    </div>
+
+    <div class="column is-fullwidth">
+      <p class="has-text-centered" style="font-size: 18px;">Test Settings: Seen Object (SO), Unseen Object (UO), Unseen Container (UC), Unseen Environment (UE)</p>
+    </div>
+
+    <!-- Example row: Rigid Object Pick-Place -->
+    <div class="column is-fullwidth">
+      <h2 class="title is-4 has-text-centered" style="font-size: 24px;">Rigid Object Pick-Place</h2>
+    </div>
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">SO</p>
+        <figure>
+          <img src="resources/tasks/so.png" alt="Task instruction: Move the green bottle to the bowl">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_so.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_so.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Example row: Rigid Object Pick-Place (Unseen Object) -->
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">UO</p>
+        <figure>
+          <img src="resources/tasks/uo.png" alt="Task instruction: Move the orange bottle to the bowl">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_uo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_uo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Example row: Rigid Object Pick-Place (Unseen Object) -->
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">UC</p>
+        <figure>
+          <img src="resources/tasks/uc.png" alt="Task instruction: Move the black Pepsi to the mug">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_uc.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_uc.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Example row: Rigid Object Pick-Place (Unseen Object) -->
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">UO+UE</p>
+        <figure>
+          <img src="resources/tasks/uoue.png" alt="Task instruction: Move the orange soda to the bowl">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_uoue.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_uoue.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Add more rows mapping tasks to videos:
+         - Single Object: tasks/so.png -> pi05/pi05_so.mp4, ours/ours_so.mp4
+         - UO: uo.png -> pi05/pi05_uo.mp4, ours/ours_uo.mp4
+         - UOE: uoue.png -> pi05/pi05_uoue.mp4, ours/ours_uoue.mp4
+         - Fridge UO: tasks/fridge_uo.png -> pi05/pi05_fridge_uo.mp4, ours/ours_fridge_uo.mp4
+         - Fridge UO+UE: tasks/fridge_uoue.png -> pi05/pi05_fridge_uoue.mp4, ours/ours_fridge_uoue.mp4
+         - PP UOUC: tasks/pp_uouc.png -> pi05/pi05_pp_uouc.mp4, ours/ours_pp_uouc.mp4
+         - PP UOUC+UE: tasks/pp_uoucue.png -> pi05/pi05_pp_uoucue.mp4, ours/ours_pp_uoucue.mp4
+         - UC (unseen container): uc.png -> pi05/pi05_uc.mp4, ours/ours_uc.mp4
+    -->
+
+    <div class="column is-fullwidth">
+      <h2 class="title is-4 has-text-centered" style="font-size: 24px;">Articulated Object Manipulation</h2>
+    </div>
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">SO</p>
+        <figure>
+          <img src="resources/tasks/oven.png" alt="Task instruction: Open the oven">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_oven.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_oven.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">SO</p>
+        <figure>
+          <img src="resources/tasks/drawer.png" alt="Task instruction: Open the drawer">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_drawer.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_drawer.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">UO</p>
+        <figure>
+          <img src="resources/tasks/micro.png" alt="Task instruction: Open the microwave">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_micro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_micro.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-fullwidth">
+        <h2 class="title is-3">Real-World Results</h2>
+      </div>
+    </div>
+
+    <!-- Example row: Pick-Place -->
+    <div class="column is-fullwidth">
+      <h2 class="title is-4 has-text-centered" style="font-size: 24px;">Pick-Place</h2>
+    </div>
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">UO+UC</p>
+        <figure>
+          <img src="resources/tasks/pp_uouc.png">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_pp_uouc.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_pp_uouc.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Example row: Rigid Object Pick-Place (Unseen Object) -->
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">UO+UC+UE</p>
+        <figure>
+          <img src="resources/tasks/pp_uoucue.png">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_pp_uoucue.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_pp_uoucue.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="column is-fullwidth">
+      <h2 class="title is-4 has-text-centered" style="font-size: 24px;">Fridge Storage</h2>
+    </div>
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">UO</p>
+        <figure>
+          <img src="resources/tasks/fridge_uo.png"">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_fridge_uo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_fridge_uo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">UO+UE</p>
+        <figure>
+          <img src="resources/tasks/fridge_uoue.png">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_fridge_uoue.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_fridge_uoue.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="column is-fullwidth">
+      <h2 class="title is-4 has-text-centered" style="font-size: 24px;">Clutter Pick-Place</h2>
+    </div>
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">SO</p>
+        <figure>
+          <img src="resources/tasks/ppc.png"">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_ppc.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_ppc.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-text-centered">
+        <p class="has-text-weight-semibold" style="font-size: 20px;">UC</p>
+        <figure>
+          <img src="resources/tasks/ppc_uc.png">
+        </figure>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">\( \pi_{0.5} \)</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/pi05/pi05_ppc_uc.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <p style="font-size: 20px;">BayesVLA</p>
+        <video controls muted preload="metadata" loop playsinline>
+          <source src="resources/ours/ours_ppc_uc.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{xu2025bayesvla,
+      title={Seeing to Act, Prompting to Specify: A Bayesian Factorization of Vision Language Action Policy},
+      author={Xu, Kechun and Zhu, Zhenjie and Chen, Anzhe and Zhao, Shuqi and Huang, Qing and Yang, Yifei and Lu, Haojian and Xiong, Rong and Tomizuka, Masayoshi and Wang, Yue},
+      journal={arXiv preprint arXiv:},
+      year={2025}
+    }</code></pre>
+  </div>
+</section>
+
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>
+      We are very grateful to <a href="https://kyleleey.github.io/">Zizhang Li</a> for suggestions on figures and videos.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This webpage template is adapted from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  initComparisons();
+  window.addEventListener('resize', resetComparisons);
+  linkVideos(0);
+  linkVideos(1);
+</script>
+<script type="text/javascript" src="./static/js/slick.min.js"></script>
+<script src="./static/js/main.js"></script>
+
+</body>
+</html>
